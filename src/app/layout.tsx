@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { AuthProvider } from './context/auth-provider';
+import UserThemeProvider from './context/theme-provider';
 import './globals.css';
 import VaultHeader from './components/Header';
-import { ThemeProvider } from './context/theme-provider';
 
 export const metadata: Metadata = {
   title: 'Vault App',
@@ -16,14 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={'bg-white text-slate-800 dark:bg-slate-800 dark:text-white'}
-      >
+      <body>
         <AuthProvider>
-          <ThemeProvider>
+          <UserThemeProvider>
             <VaultHeader />
             {children}
-          </ThemeProvider>
+          </UserThemeProvider>
         </AuthProvider>
       </body>
     </html>
