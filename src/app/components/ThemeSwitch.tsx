@@ -4,10 +4,10 @@ import {
   HiOutlineSun as SunIcon,
   HiOutlineMoon as MoonIcon
 } from 'react-icons/hi2';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, FC } from 'react';
 import { useTheme } from 'next-themes';
 
-const ThemeSwitch = () => {
+const ThemeSwitch: FC = (): React.JSX.Element => {
   const [mounted, setMounted] = useState<boolean>(false);
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === 'system' ? systemTheme : theme;
@@ -25,14 +25,12 @@ const ThemeSwitch = () => {
     );
   }
 
-  if (currentTheme === 'light') {
-    return (
-      <MoonIcon
-        className="h-6 w-6 hover:cursor-pointer"
-        onClick={() => setTheme('dark')}
-      />
-    );
-  }
+  return (
+    <MoonIcon
+      className="h-6 w-6 hover:cursor-pointer"
+      onClick={() => setTheme('dark')}
+    />
+  );
 };
 
 export default ThemeSwitch;

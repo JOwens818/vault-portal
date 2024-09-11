@@ -1,11 +1,11 @@
-export default function Home() {
+'use client';
+
+import FormCredentials from '../components/forms/Credentials';
+
+export default function SignUp() {
   return (
-    <main className="flex items-center justify-center p-20 pt-32">
-      <div>
-        <h1 className="max-w-3xl text-center font-bold text-5xl leading-tight mb-3">
-          SIGN UP
-        </h1>
-      </div>
-    </main>
+    <div className="max-w-lg items-center justify-center mt-16 m-auto TileContainer w-[90%]">
+      <FormCredentials isLogin={false} />
+    </div>
   );
 }

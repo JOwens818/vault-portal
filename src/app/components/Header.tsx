@@ -1,5 +1,5 @@
 'use client';
-import { useContext } from 'react';
+import React, { FC, useContext } from 'react';
 import { AuthContext } from '@/app/context/auth-provider';
 import { SiVault } from 'react-icons/si';
 import { FaUserAstronaut } from 'react-icons/fa6';
@@ -7,7 +7,7 @@ import { Button } from 'react-aria-components';
 import Link from 'next/link';
 import ThemeSwitch from './ThemeSwitch';
 
-export default function VaultHeader() {
+const VaultHeader: FC = (): React.JSX.Element => {
   const { user } = useContext(AuthContext);
 
   return (
@@ -26,4 +26,6 @@ export default function VaultHeader() {
       </div>
     </div>
   );
-}
+};
+
+export default VaultHeader;

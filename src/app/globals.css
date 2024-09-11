@@ -4,6 +4,27 @@
 
 @layer base {
   body {
-    @apply dark:bg-slate-800 dark:text-white bg-gray-50 text-slate-800;
+    @apply dark:bg-slate-950 dark:text-gray-100 bg-gray-100 text-slate-950;
+  }
+
+  .TileContainer {
+    @apply dark:bg-slate-800 bg-gray-300 rounded-lg p-6;
+  }
+
+  .react-aria-Form {
+    @apply flex flex-col gap-3 w-2/3 justify-center m-auto; 
+  }
+
+  .react-aria-TextField {
+    @apply flex flex-col;
+  }
+
+  .react-aria-Input,
+  .react-aria-TextArea {
+    @apply p-2 mt-1 rounded-md focus:border-l-8 focus:outline-none dark:focus:outline-none focus:border-cyan-700 dark:focus:border-l-cyan-300 data-[invalid]:border data-[invalid]:border-red-600 data-[invalid]:focus:border-l-8 data-[invalid]:focus:border-cyan-700;
+  }
+
+  .react-aria-FieldError {
+    @apply text-sm text-red-600 dark:text-red-500 mt-1
   }
 }
