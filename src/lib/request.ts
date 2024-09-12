@@ -1,9 +1,6 @@
 import { ApiResponse } from '@/types';
 
-const fetcher = async (
-  url: string,
-  config: RequestInit = {}
-): Promise<ApiResponse> => {
+const fetcher = async (url: string, config: RequestInit = {}): Promise<ApiResponse> => {
   return await fetch(url, config)
     .then((resp) => {
       if (resp.status == 504) {

@@ -16,10 +16,7 @@ const authMiddleware: NextMiddleware = async (req: NextRequest) => {
       method: 'GET',
       headers: new Headers({ Authorization: `Bearer ${hasVaultToken.value}` })
     };
-    const user: UserResponse = await fetcher(
-      'http://localhost:3030/api/users/user-info',
-      options
-    );
+    const user: UserResponse = await fetcher('http://localhost:3030/api/users/user-info', options);
 
     if (user.status !== 'success') {
       return NextResponse.redirect('/');

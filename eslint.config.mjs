@@ -11,11 +11,9 @@ export default [
     ignores: ['/*', '!/src'],
     ...pluginReact.configs.flat.recommended,
     rules: {
+      'max-len': ['error', { code: 120 }],
       semi: 'error',
-      '@typescript-eslint/no-unused-vars': [
-        'error',
-        { args: 'all', caughtErrors: 'all', argsIgnorePattern: '^_' }
-      ],
+      '@typescript-eslint/no-unused-vars': ['error', { args: 'all', caughtErrors: 'all', argsIgnorePattern: '^_' }],
       'react/react-in-jsx-scope': 'off',
       'react/jsx-uses-react': 'off'
     }

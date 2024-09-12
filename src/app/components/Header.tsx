@@ -1,4 +1,5 @@
 'use client';
+
 import React, { FC, useContext } from 'react';
 import { AuthContext } from '@/app/context/auth-provider';
 import { SiVault } from 'react-icons/si';

@@ -25,7 +25,3 @@ export interface RequestOptions {
   headers?: RequestHeaders;
   body?: string;
 }
-
-export interface FormCredentialsProps {
-  isLogin: boolean;
-}

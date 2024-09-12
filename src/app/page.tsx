@@ -4,11 +4,9 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="flex items-center justify-center p-20 pt-32">
+    <main className="h-screen bg-center bg-cover bg-[url('../public/binary-4851165_1280.jpg')] flex items-center justify-center">
       <div>
-        <h1 className="max-w-3xl text-center font-bold text-5xl leading-tight mb-3">
-          Secure Password Vault
-        </h1>
+        <h1 className="max-w-3xl text-center font-bold text-5xl leading-tight mb-3">Secure Password Vault</h1>
         <p className="max-w-3xl text-lg font-medium text-center mb-5">
           Store your secrets securely without the need for third party hosting
         </p>
