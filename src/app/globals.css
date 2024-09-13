@@ -12,11 +12,11 @@
   }
 
   .react-aria-Form {
-    @apply flex flex-col gap-3 w-2/3 justify-center m-auto; 
+    @apply flex flex-col gap-3 w-4/5 justify-center m-auto; 
   }
 
   .react-aria-TextField {
-    @apply flex flex-col;
+    @apply flex flex-col w-auto;
   }
 
   .react-aria-Input,
