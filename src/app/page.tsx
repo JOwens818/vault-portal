@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="h-screen bg-center bg-cover bg-[url('../public/binary-4851165_1280.jpg')] flex items-center justify-center">
+    <main className="h-screen w-screen bg-center bg-cover bg-[url('../public/binary-4851165_1280.jpg')] flex items-center justify-center fixed overflow-hidden -z-10">
       <div>
         <h1 className="max-w-3xl text-center font-bold text-5xl leading-tight mb-3">Secure Password Vault</h1>
         <p className="max-w-3xl text-lg font-medium text-center mb-5">

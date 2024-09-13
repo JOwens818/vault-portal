@@ -6,13 +6,17 @@ import { SiVault } from 'react-icons/si';
 import { FaUserAstronaut } from 'react-icons/fa6';
 import { Button } from 'react-aria-components';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import ThemeSwitch from './ThemeSwitch';
 
 const VaultHeader: FC = (): React.JSX.Element => {
   const { user } = useContext(AuthContext);
+  const path = usePathname();
+
+  if (path === '/') return <></>;
 
   return (
-    <div className="header flex justify-between ml-8 mr-8 mt-4">
+    <div className="header flex justify-between ml-8 mr-8 mt-4 relative">
       <Link href="/">
         <SiVault size={36} href="/" />
       </Link>

@@ -21,7 +21,7 @@
 
   .react-aria-Input,
   .react-aria-TextArea {
-    @apply p-2 mt-1 rounded-md focus:border-l-8 focus:outline-none dark:focus:outline-none focus:border-cyan-700 dark:focus:border-l-cyan-300 data-[invalid]:border data-[invalid]:border-red-600 data-[invalid]:focus:border-l-8 data-[invalid]:focus:border-cyan-700;
+    @apply p-2 mt-1 rounded-md focus:border-l-8 focus:outline-none dark:focus:outline-none focus:border-cyan-700 dark:focus:border-l-cyan-300 data-[invalid]:border data-[invalid]:border-red-600 data-[invalid]:focus:border-l-8 data-[invalid]:focus:border-cyan-700 bg-gray-50 dark:bg-stone-950;
   }
 
   .react-aria-FieldError {
