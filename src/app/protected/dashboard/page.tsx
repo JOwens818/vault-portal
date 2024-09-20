@@ -1,6 +1,4 @@
-'use client';
-
-export default function Home() {
+export default function Dashboard() {
   return (
     <main className="flex items-center justify-center p-20 pt-32">
       <div>

@@ -12,20 +12,21 @@ import ThemeSwitch from './ThemeSwitch';
 const VaultHeader: FC = (): React.JSX.Element => {
   const { user } = useContext(AuthContext);
   const path = usePathname();
+  const doNotRender = ['/', '/login', '/signup'];
 
-  if (path === '/') return <></>;
+  if (doNotRender.includes(path)) return <></>;
 
   return (
     <div className="header flex justify-between ml-8 mr-8 mt-4 relative">
       <Link href="/">
-        <SiVault size={36} href="/" />
+        <SiVault className="h-8 w-8" href="/" />
       </Link>
 
-      <div>
+      <div className="items-center flex">
         <ThemeSwitch />
-        {user.username != 'no-user' && (
-          <Button>
-            <FaUserAstronaut size={36} />
+        {user.username !== 'no-user' && (
+          <Button className="ml-6">
+            <FaUserAstronaut className="h-8 w-8" />
           </Button>
         )}
       </div>

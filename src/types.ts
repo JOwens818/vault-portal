@@ -3,6 +3,7 @@ export type User = {
   password?: string;
   email?: string;
   forgotPw?: boolean;
+  token?: string;
 };
 
 export interface ApiResponse {
@@ -12,16 +13,4 @@ export interface ApiResponse {
 
 export interface UserResponse extends ApiResponse {
   data?: User;
-}
-
-export interface RequestHeaders {
-  'Content-type'?: string;
-  Authorization?: string;
-}
-
-export interface RequestOptions {
-  method: string;
-  credentials: 'include';
-  headers?: RequestHeaders;
-  body?: string;
 }

@@ -30,4 +30,23 @@ const handleResponse = (resp: ApiResponse): ApiResponse => {
   return resp as ApiResponse;
 };
 
-export default fetcher;
+const setupRequestInit = (method: string, token: string | undefined = undefined): RequestInit => {
+  const headers: HeadersInit = {};
+  const init: RequestInit = {
+    method: method
+  };
+
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`;
+  }
+
+  if (method === 'POST') {
+    headers['Content-type'] = 'application/json';
+  }
+
+  init.headers = headers;
+
+  return init;
+};
+
+export { fetcher, setupRequestInit };

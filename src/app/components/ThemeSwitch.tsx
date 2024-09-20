@@ -14,10 +14,10 @@ const ThemeSwitch: FC = (): React.JSX.Element => {
   if (!mounted) return <></>;
 
   if (currentTheme === 'dark') {
-    return <SunIcon className="h-6 w-6 hover:cursor-pointer" onClick={() => setTheme('light')} />;
+    return <SunIcon className="h-8 w-8 hover:cursor-pointer" onClick={() => setTheme('light')} />;
   }
 
-  return <MoonIcon className="h-6 w-6 hover:cursor-pointer" onClick={() => setTheme('dark')} />;
+  return <MoonIcon className="h-8 w-8 hover:cursor-pointer" onClick={() => setTheme('dark')} />;
 };
 
 export default ThemeSwitch;
