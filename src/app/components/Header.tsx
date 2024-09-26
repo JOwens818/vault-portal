@@ -1,21 +1,18 @@
 'use client';
 
-import React, { FC, useContext } from 'react';
-import { AuthContext } from '@/app/context/auth-provider';
+import React, { FC } from 'react';
 import { SiVault } from 'react-icons/si';
 import { FaUserAstronaut } from 'react-icons/fa6';
 import { Button } from 'react-aria-components';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import ThemeSwitch from './ThemeSwitch';
+import { User } from '@/types';
 
-const VaultHeader: FC = (): React.JSX.Element => {
-  const { user } = useContext(AuthContext);
-  const path = usePathname();
-  const doNotRender = ['/', '/login', '/signup'];
+interface HeaderProps {
+  user: User;
+}
 
-  if (doNotRender.includes(path)) return <></>;
-
+const VaultHeader: FC<HeaderProps> = (props): React.JSX.Element => {
   return (
     <div className="header flex justify-between ml-8 mr-8 mt-4 relative">
       <Link href="/">
@@ -24,7 +21,7 @@ const VaultHeader: FC = (): React.JSX.Element => {
 
       <div className="items-center flex">
         <ThemeSwitch />
-        {user.username !== 'no-user' && (
+        {props.user.username !== '' && (
           <Button className="ml-6">
             <FaUserAstronaut className="h-8 w-8" />
           </Button>

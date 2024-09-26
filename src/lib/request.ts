@@ -27,13 +27,18 @@ const handleResponse = (resp: ApiResponse): ApiResponse => {
     throw new Error('Unknown error occurred');
   }
 
+  if (resp.status !== 'success') {
+    console.error('API response failure:', resp.message);
+  }
+
   return resp as ApiResponse;
 };
 
 const setupRequestInit = (method: string, token: string | undefined = undefined): RequestInit => {
   const headers: HeadersInit = {};
   const init: RequestInit = {
-    method: method
+    method: method,
+    credentials: 'include'
   };
 
   if (token) {
