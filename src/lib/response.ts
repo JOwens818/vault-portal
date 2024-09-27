@@ -5,7 +5,7 @@ const sendTokenAsCookie = async (userResp: UserResponse) => {
   const response = NextResponse.json({ status: 'success', message: 'Token generated' }, { status: 200 });
   response.cookies.set('vault_token', userResp.data!.token!, {
     httpOnly: true,
-    secure: true,
+    //secure: true,
     sameSite: 'strict',
     maxAge: 1800
   });
@@ -23,9 +23,9 @@ const sendFriendlyLoginMessage = (userResp: UserResponse) => {
 
 const sendFriendlySignupMessage = (userResp: UserResponse) => {
   if (
-    userResp.message?.includes('username') ||
-    userResp.message?.includes('password') ||
-    userResp.message?.includes('email')
+    userResp.message?.toLowerCase().includes('username') ||
+    userResp.message?.toLowerCase().includes('password') ||
+    userResp.message?.toLowerCase().includes('email')
   ) {
     return NextResponse.json(userResp, { status: 400 });
   }

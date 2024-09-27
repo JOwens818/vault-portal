@@ -28,7 +28,7 @@ const handleResponse = (resp: ApiResponse): ApiResponse => {
   }
 
   if (resp.status !== 'success') {
-    console.error('API response failure:', resp.message);
+    console.error('API response unsuccessful:', resp.message);
   }
 
   return resp as ApiResponse;

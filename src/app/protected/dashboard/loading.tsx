@@ -1,5 +1,7 @@
+import LoadingScreen from '@/app/components/LoadingScreen';
+
 const Loading = () => {
-  return 'Loading...';
+  return <LoadingScreen />;
 };
 
 export default Loading;
